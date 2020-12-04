@@ -8,9 +8,7 @@ const CategoriesProvider = (props) => {
   useEffect(() => {
     const requestCategories = async () => {
       try {
-        const res = await fetch(
-          "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list"
-        );
+        const res = await fetch(process.env.REACT_APP_API_URL);
         const result = await res.json();
         setCategories(result.drinks);
       } catch (error) {
