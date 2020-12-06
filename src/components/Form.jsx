@@ -9,7 +9,6 @@ const Form = () => {
     ingredient: "",
     category: "",
   });
-  const [error, setError] = React.useState(false);
 
   const handleChange = (e) => {
     setSearchTerm({
@@ -21,7 +20,6 @@ const Form = () => {
   const handleSutmit = (e) => {
     e.preventDefault();
     if (searchTerm.category.trim() === "" || searchTerm.ingredient === "") {
-      setError(true);
       return null;
     }
     setSearchData(searchTerm);
